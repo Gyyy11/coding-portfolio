@@ -1,21 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Web基础问答助手助手</title>
+    <style>
+        body {
+            background: #f8f9fa; /* 更明亮的背景色 */
+            padding: 0; /* 移除默认内边距 */
+        }
+        
+        .qa-container {
+            width: 100vw;
+            height: 100vh;
+            max-width: none; /* 取消最大宽度限制 */
+            border-radius: 0; /* 移除圆角 */
+            box-shadow: none; /* 移除阴影 */
+        }
+        
+        #qanything-iframe {
+            width: 100% !important;
+            height: calc(100vh - 80px) !important; /* 图表区域高度自适应 */
+            border: none;
+            margin: 0 auto;
+            display: block;
+            background: transparent;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%); /* 渐变背景 */
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* 添加细微阴影 */
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2); /* 文字阴影增强 */
+        }
+    </style>
 </head>
 <body>
-    <script
-        src="https://ai.youdao.com/saas/qanything/js/agent-iframe-min.js"
-        id="qanything-iframe"
-        data-agent-src="https://ai.youdao.com/saas/qanything/#/bots/41A6461F5B15493A/share"
-        data-default-open=false
-        data-drag=false
-        data-open-icon="https://download.ydstatic.com/ead/icon-qanything-iframe-btn.png"
-        data-close-icon="https://download.ydstatic.com/ead/icon-qanything-iframe-btn.png"
-        defer
-      >
-    </script>
+    <div class="qa-container">
+        <div class="header">
+            <h1>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                </svg>
+                Web基础问答助手
+            </h1>
+        </div>
+        <script
+            src="https://ai.youdao.com/saas/qanything/js/agent-iframe-min.js"
+            id="qanything-iframe" 
+            data-agent-src="https://ai.youdao.com/saas/qanything/#/bots/41A6461F5B15493A/share"
+            style="min-height: 800px; /* 最小高度保障 */"
+            data-default-open="true" /* 默认展开对话框 */
+        ></script>
+    </div>
 </body>
 </html>
+
